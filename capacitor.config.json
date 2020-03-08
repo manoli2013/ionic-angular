@@ -1,0 +1,9 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "ionic-angular",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "linuxAndroidStudioPath": "/home/noli/Escritorio/android-studio-ide-192.6241897-linux/android-studio/bin/studio.sh",
+  "cordova": {}
+}
