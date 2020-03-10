@@ -1,6 +1,6 @@
+import { ApiService } from './../../services/api.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
  
 @Component({
@@ -9,18 +9,21 @@ import { Observable } from 'rxjs';
   styleUrls: ['./films.page.scss'],
 })
 export class FilmsPage implements OnInit {
- 
+
   films: Observable<any>;
- 
-  constructor(private router: Router, private http: HttpClient) { }
- 
+
+  constructor(private router: Router, private api: ApiService) { }
+
   ngOnInit() {
-    this.films = this.http.get('https://swapi.co/api/films');
+    this.films = this.api.getFilms();
+
   }
- 
+
   openDetails(film) {
     let split = film.url.split('/');
     let filmId = split[split.length-2];
     this.router.navigateByUrl(`/tabs/films/${filmId}`);
+    // this.router.navigate(['/films', {id: filmId} ]);
   }
+
 }
